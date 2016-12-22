@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="timer">
+    {{counterSec}}
+  </div>
+</div>
+
+<!-- <div class="row">
+  <div class="suggested-time">
+
+    <div class="time-for-work" ng-show="(mode === 'Break')">
+      <button class="suggestions" ng-repeat="min in workMin" ng-click="setTimeTo(min*60)">{{min}}</button>
+      <span class="suggestions" ng-show=customMin>
+        <input class="customMins" type="number" placeholder="Time in mins" ng-model="usersMinutes">
+        <button class="btn btn-primary" ng-click="setTimeTo(usersMinutes*60)">Go</button>
+      </span>
+    </div>
+
+    <div class="time-for-break" ng-show="(mode === 'Work')">
+      <button class="suggestions" ng-repeat="min in breakMin" ng-click="setTimeTo(min*60)">{{min}}</button>
+      <span class="suggestions" ng-show=customMin>
+        <input class="customMins" type="number" placeholder="Time in mins" ng-model="usersMinutes">
+        <button class="btn btn-primary" ng-click="setTimeTo(usersMinutes*60)">Go</button>
+      </span>
+    </div>
+
+  </div>
+</div> -->
+
+<div class="row">
+  <div class="buttonContainer">
+    <button class="button" ng-click="startStop()">{{togglingButton}}</button>
+    <button class="button" ng-click="resetTimer()">Reset</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="modeContainer">
+
+    <button class="modebtn" id="work" ng-click="modeWork();">WORK</button>
+
+    <button class="modebtn" id="rest" ng-click="modeRest();" >REST</button>
+  </div>
+</div>
+
+<div class="bindRow" ng-hide=true>
+  <p class="bindingBtn">
+    Clock-Music bind:
+  </p>
+  <button ng-click="bindingBtn()">
+    {{onoff}}
+  </button>
+</div>
+
+
+<!-- NO DEFAULT -->
+<div class="pick-music">
+  <h4>Time to pick your music source:</h4>
+  <a ui-sref=".spotify" class="btn btn-primary">Spotify</a>
+  <a ui-sref=".youtube" class="btn btn-primary">Youtube</a>
+  <!-- <a ui-sref=".radio" class="btn btn-primary">Radio</a> -->
+</div>
+
+
+<div ui-view>
+  <div class="row musicPlayerBox">
+  <p class="playerHeader">PLAY SOME MUSIC</p>
+  <div class="iframe">
+    <iframe width="100%" height="100" src="https://www.youtube.com/embed/DCoY5ot8zg4" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+</div>
+
