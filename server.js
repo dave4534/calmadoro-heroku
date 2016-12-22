@@ -1,7 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
-var port = 8000;
+// mongoose.connect('mongodb://localhost/calmadoro-db');
+// mongoose.connect(process.env.MONGOLAB_PINK_URI ||'mongodb://localhost/calmadoro-db');
 
 var app = express();
 
@@ -18,8 +19,5 @@ app.get('/', function(req, res) {
     res.sendFile(__dirname + "/public/index.html");
 });
 
-
-app.listen(port, function() {
-	console.log(' server app is up, listening on', port);
-});
+app.listen(process.env.PORT || '4000');
 
